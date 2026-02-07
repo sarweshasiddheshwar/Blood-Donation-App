@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Donation App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Entry Page -->
+<div class="container" id="entryPage">
+    <h1>🩸 Blood Donation App</h1>
+    <p class="subtitle">Saving lives starts with you</p>
+
+    <button class="primary" onclick="showUser()">👤 User</button>
+    <button class="secondary" onclick="showHospital()">🏥 Hospital</button>
+</div>
+
+<!-- User Panel -->
+<div class="container hidden" id="userPage">
+    <h2>User Panel</h2>
+    <button class="primary" onclick="showUserRegister()">Create Account</button>
+    <button class="secondary" onclick="showUserLogin()">Login</button>
+    <button class="back" onclick="goBack()">⬅ Back</button>
+</div>
+
+<!-- User Register -->
+<div class="container hidden" id="userRegisterPage">
+    <h2>Create Account</h2>
+    <p class="subtitle">Become a blood donor</p>
+
+    <div class="input-box"><span>👤</span><input type="text" placeholder="Full Name"></div>
+    <div class="input-box"><span>📧</span><input type="email" placeholder="Email"></div>
+    <div class="input-box"><span>🩸</span><input type="text" placeholder="Blood Group (A+, O-)"></div>
+    <div class="input-box"><span>🔒</span><input type="password" placeholder="Password"></div>
+
+    <button class="primary">Create Account</button>
+    <button class="back" onclick="showUser()">⬅ Back</button>
+</div>
+
+<!-- User Login -->
+<div class="container hidden" id="userLoginPage">
+    <h2>User Login</h2>
+
+    <div class="input-box"><span>📧</span><input type="email" placeholder="Email"></div>
+    <div class="input-box"><span>🔒</span><input type="password" placeholder="Password"></div>
+
+    <button class="primary">Login</button>
+    <button class="back" onclick="showUser()">⬅ Back</button>
+</div>
+
+<!-- Hospital Panel -->
+<div class="container hidden" id="hospitalPage">
+    <h2>Hospital Panel</h2>
+    <button class="primary" onclick="showHospitalRegister()">Register Hospital</button>
+    <button class="secondary" onclick="showHospitalLogin()">Login</button>
+    <button class="back" onclick="goBack()">⬅ Back</button>
+</div>
+
+<!-- Hospital Register -->
+<div class="container hidden" id="hospitalRegisterPage">
+    <h2>Register Hospital</h2>
+
+    <div class="input-box"><span>🏥</span><input type="text" placeholder="Hospital Name"></div>
+    <div class="input-box"><span>🆔</span><input type="text" placeholder="Hospital ID"></div>
+    <div class="input-box"><span>📧</span><input type="email" placeholder="Email"></div>
+    <div class="input-box"><span>📞</span><input type="text" placeholder="Contact Number"></div>
+    <div class="input-box"><span>🔒</span><input type="password" placeholder="Password"></div>
+
+    <button class="primary">Register</button>
+    <button class="back" onclick="showHospital()">⬅ Back</button>
+</div>
+
+<!-- Hospital Login -->
+<div class="container hidden" id="hospitalLoginPage">
+    <h2>Hospital Login</h2>
+
+    <div class="input-box"><span>📧</span><input type="email" placeholder="Email"></div>
+    <div class="input-box"><span>🔒</span><input type="password" placeholder="Password"></div>
+
+    <button class="primary">Login</button>
+    <button class="back" onclick="showHospital()">⬅ Back</button>
+</div>
+
+<script>
+function hideAll() {
+    document.querySelectorAll(".container").forEach(c => c.classList.add("hidden"));
+}
+function showUser() { hideAll(); userPage.classList.remove("hidden"); }
+function showHospital() { hideAll(); hospitalPage.classList.remove("hidden"); }
+function showUserRegister() { hideAll(); userRegisterPage.classList.remove("hidden"); }
+function showUserLogin() { hideAll(); userLoginPage.classList.remove("hidden"); }
+function showHospitalRegister() { hideAll(); hospitalRegisterPage.classList.remove("hidden"); }
+function showHospitalLogin() { hideAll(); hospitalLoginPage.classList.remove("hidden"); }
+function goBack() { hideAll(); entryPage.classList.remove("hidden"); }
+</script>
+
+</body>
+</html>
